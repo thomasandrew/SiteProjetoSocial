@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cineminha no Beco</title>
+    <title>{% block title %}Cineminha no Beco{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'appOng/styles.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,15 +16,19 @@
 
 <body>
     <header>
-        <img src="/templates/logo_cineminha.png" alt="logo" />
+        {% block content %}
+        <img class="logo" src="{% static 'appOng/logo_cineminha.png' %}" alt="logo" />
         <nav>
             <ul>
-                <li>Home</li>
-                <a href="galeria.html">
+                <a href="{% url 'home' %}">
+                    <li>Home</li>
+                </a>
+                <a href="{% url 'galeria' %}">
                     <li>Galeria</li>
                 </a>
             </ul>
         </nav>
+        {% endblock %}
     </header>
     <main>
 

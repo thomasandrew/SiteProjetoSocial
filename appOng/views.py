@@ -4,3 +4,6 @@ from django.shortcuts import render, HttpResponse
 
 def home(request):
     return render(request, "index.html")
+
+def galeria(request):
+    return render(request, "galeria.html")

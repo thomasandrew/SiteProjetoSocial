@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cineminha no Beco{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'appOng/styles.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <img class="logo" src="{% static 'appOng/logo_cineminha.png' %}" alt="logo" />
+        <nav>
+            <ul>
+                <a href="{% url 'home' %}">
+                    <li>Home</li>
+                </a>
+                <a href="{% url 'galeria' %}">
+                    <li>Galeria</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>

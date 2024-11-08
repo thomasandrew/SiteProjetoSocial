@@ -1,0 +1,30 @@
+.galeria-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.galeria-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.galeria {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+}
+
+.filme img {
+    width: 30vw;
+    height: 40vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #164cca;
+    transition: transform 0.7s ease;
+}
+
+
+.filme img:hover {
+    transform: scale(1.05);
+}

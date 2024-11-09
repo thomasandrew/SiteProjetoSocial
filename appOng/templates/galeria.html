@@ -4,4 +4,108 @@ Cineminha no Beco
 {% endblock %}
 {% block content %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Filmes</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'appOng/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'appOng/styles.css' %}" />
+</head>
+<style>
+    .bg_modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        width: 80%;
+        max-width: 500px;
+        max-height: 80vh;
+        min-height: 200px;
+        overflow-y: auto;
+        text-align: center;
+    }
+
+    .modal-content img {
+        max-width: 100%;
+        max-height: 80vh;
+        border-radius: 8px;
+    }
+
+    .modal-content button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #ff5e5e;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .modal-content button:hover {
+        background-color: #ff3b3b;
+    }
+</style>
+
+<body >
+    <div class="centro">
+        <section class="galeria-container">
+                <h2>Galeria de fotos</h2>
+                <div class="galeria">
+                    {% for image in images %}
+                    <div class="filme">
+                        <img src="{{ image.image.url }}" alt="{{ image.title }}"
+                            onclick="openModal('{{ image.image.url }}')">
+                    </div>
+                    {% endfor %}
+                </div>
+        </section>
+       </div>
+
+        <!-- Modal -->
+        <div class="bg_modal" id="modal" style="display: none;">
+            <div style="  height: 100%; margin: 0; display: flex; justify-content: center; align-items: center;">
+                <div class="modal-content">
+                    <div>
+                        <img src="" alt="Imagem Selecionada" id="modal-image">
+                    </div>
+                    <button onclick="closeModal()">Fechar</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function openModal(imageUrl) {
+                document.getElementById('modal').style.display = 'block';
+                document.getElementById('modal-image').src = imageUrl;
+            }
+
+            function closeModal() {
+                document.getElementById('modal').style.display = 'none';
+                document.getElementById('modal-image').src = '';
+            }
+        </script>
+
+        <footer>
+            <p>&copy; 2024 Todos os direitos reservados</p>
+        </footer>
+</body>
+
+</html>
 {% endblock %}

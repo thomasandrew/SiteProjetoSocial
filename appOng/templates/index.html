@@ -1,32 +1,49 @@
-
 {% extends "base.html" %}
 {% block title %}
 Cineminha no Beco
 {% endblock %}
 {% block content %}
 {% load static %}
-<section class="banner">
-    <h1>A magia do cinema transforma histórias em emoções</h1>
-    <button>Filmes</button>
+<section class="section-overlay">
+    <div class="overlay">
+        <p id="text1">A magia do cinema transforma</p>
+        <p id="text1">histórias em emoções</p>
+        <div class="btn">
+            <button id="btn1" onclick="scrollDown()">
+                 <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </div>
 </section>
 <main>
-    <main>
-        <section class="main">
-            <h2>Filmes mais vistos:</h2>
-            <div class="movie-list">
-                <img src="filmes-classicos-ontem-hoje_16.jpg" alt="Filme 1" class="imagem">
-                <img src="filmes-classicos-ontem-hoje_16.jpg" alt="Filme 2" class="imagem">
-                <img src="filmes-classicos-ontem-hoje_16.jpg" alt="Filme 3" class="imagem">
-            </div>
-        </section>
-        <section class="about">
+    <div class="full-page-background">
+        <div class="cineminha-container">
             <h2>Sobre</h2>
-            <p>What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-        </section>
-    </main>
+            <p>
+                <strong>Cineminha no Beco</strong> é um projeto de cinema social que democratiza o acesso à sétima arte,
+                levando filmes de qualidade e cultura cinematográfica para comunidades de baixa renda, especialmente
+                nas favelas. Com uma programação rica e diversa, que vai de clássicos e documentários a produções
+                independentes,
+                o Cineminha no Beco oferece mais que entretenimento: cria momentos de reflexão, diálogo e aprendizado
+                coletivo.
+            </p>
+            <p>
+                Além das sessões de cinema, o projeto promove oficinas e atividades culturais, transformando o espaço
+                em um ponto de encontro inclusivo e vibrante, onde todos podem vivenciar a magia do cinema e
+                fortalecer os laços comunitários.
+            </p>
+        </div>
+    </div>
 </main>
 <footer>
     <p>&copy; 2024 Todos os direitos reservados</p>
 </footer>
+<script>
+    function scrollDown() {
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+        });
+    }
+</script>
 {% endblock %}

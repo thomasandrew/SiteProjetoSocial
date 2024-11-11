@@ -36,5 +36,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(150, 255, 255);
+    background: linear-gradient(90deg, #47b6e1, white);
 }

@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 {% block title %}
 Cineminha no Beco
@@ -7,20 +6,41 @@ Cineminha no Beco
 {% load static %}
 <section class="banner">
     <h1>A magia do cinema transforma histórias em emoções</h1>
+    <div>
+        <button class="botaoSobre" onclick="scrollDown()">Saiba mais</button>
+    </div>
 </section>
-    <main>
-        <section class="about">
-            <h2 class="sobreH2">Sobre</h2>
-            <p>Cineminha no Beco é um cinema social que visa democratizar o acesso à sétima arte, levando filmes de qualidade e cultura
-                cinematográfica a comunidades menos favorecidas, especialmente moradores de favelas.
-                Com uma programação diversificada que inclui clássicos, filmes
-                independentes e documentários, o projeto busca não apenas entreter, mas também promover reflexão e 
-                discussão sobre temas relevantes para a comunidade. Além de exibições de filmes, o Cineminha no Beco oferece oficinas e 
-                atividades culturais, criando um espaço inclusivo onde todos podem desfrutar da magia
-                 do cinema e fortalecer laços comunitários..</p>
-        </section>
-    </main>
+<main>
+    <section class="about">
+        <h2 class="sobreH2">Sobre</h2>
+        <p>Cineminha no Beco é um cinema social que visa democratizar o acesso à sétima arte, levando filmes de
+            qualidade e cultura
+            cinematográfica a comunidades menos favorecidas, especialmente moradores de favelas.
+            Com uma programação diversificada que inclui clássicos, filmes
+            independentes e documentários, o projeto busca não apenas entreter, mas também promover reflexão e
+            discussão sobre temas relevantes para a comunidade. Além de exibições de filmes, o Cineminha no Beco oferece
+            oficinas e
+            atividades culturais, criando um espaço inclusivo onde todos podem desfrutar da magia
+            do cinema e fortalecer laços comunitários.</p>
+        <p>A nossa história começou há 11 anos. Desde então, temos trabalhado arduamente para mostrar a magia do cinema
+            para comunidades menos favorecidas. Acreditamos que o acesso ao cinema é importante para para inspirar
+            sonhos, promover a inclusão social e abrir novos horizontes, proporcionando cultura, educação e
+            entretenimento a quem mais precisa.</p>
+    </section>
+</main>
 <footer>
-    <p>&copy; 2024 Todos os direitos reservados</p>
+    <p>&copy; Cineminha do Beco 2024 todos os direitos reservados</p>
+    <div class="redesSociais">
+        <a href="https://www.instagram.com/cineminhanobeco/"><img src="{% static 'appOng/logo insta.webp' %}" /></a>
+        <a href="https://www.youtube.com/@bhegasilva9320/videos"><img src="{% static 'appOng/youtube.png' %}" /></a>
+    </div>
 </footer>
+<script>
+    function scrollDown() {
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+        });
+    }
+</script>
 {% endblock %}

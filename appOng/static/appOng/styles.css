@@ -42,21 +42,43 @@
  }
 
  a {
-     color: black;
+     color: white;
      text-decoration: none;
  }
+
  .banner {
-     background: url('background\ cinema.jpeg') no-repeat center;
-     background-size: 100%;
+     background-color: black;
+     background: url('foto1.jpg') no-repeat center;
+     background-size: 100% 100%;
      /* Ajusta a imagem para caber dentro do contêiner */
      color: white;
      text-align: center;
-     padding: 50px 20px;
-
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     height: 90vh;
+     flex-direction: column;
  }
 
  .banner h1 {
      font-size: 56px;
+     width: 55vw;
+ }
+
+ .botaoSobre {
+     font-size: 30px;
+     border-radius: 20px;
+     border: none;
+     cursor: pointer;
+     background-color: #01AAEF;
+     color: white;
+     transition: 0.5s;
+ }
+
+ .botaoSobre:hover {
+     transform: scale(1.1);
+     background-color: darkblue;
+     transition: 0.5s;
  }
 
  .about {
@@ -67,17 +89,30 @@
  }
 
  .sobreH2 {
-    font-size: 3rem;
+     font-size: 3rem;
  }
 
  .about p {
-     font-size: 1.4rem;
-     margin-top: 3rem;
+     font-size: 1.5rem;
+     margin-top: 2.5rem;
+     text-align: start;
  }
 
  footer {
      background-color: black;
      color: white;
-     text-align: center;
-     padding: 10px;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+ }
+
+ .redesSociais {
+     display: flex;
+     justify-content: space-evenly;
+     width: 10vw;
+ }
+
+ footer img {
+     width: 2.5vw;
+     cursor: pointer;
  }

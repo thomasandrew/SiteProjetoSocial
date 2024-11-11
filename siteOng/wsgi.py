@@ -15,4 +15,4 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'siteOng.settings')
 
 application = get_wsgi_application()
 
-WSGI_APPLICATION = 'appOng.wsgi.app'
+WSGI_APPLICATION = 'siteOng.wsgi.app'
